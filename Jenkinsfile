@@ -6,21 +6,8 @@ pipeline {
     stages {
     	
     	
-    	stage('Checkout') {
-
-        // Checkout files.
-        checkout([
-            $class: 'GitSCM',
-            branches: [[name: 'master']],
-            doGenerateSubmoduleConfigurations: false,
-            extensions: [], submoduleCfg: [],
-            userRemoteConfigs: [[
-                name: 'github',
-                url: 'https://github.com/mmorejon/time-table.git'
-            ]]
-        ])
-
-       
+    	stage('Checkout repository') {
+        	git 'https://github.com/luizlucasi/site_webapp.git'
     	}
     	
         stage('Build') {
