@@ -7,7 +7,7 @@ pipeline {
     	
     	
     	stage('Checkout repository') {
-        	git 'https://github.com/luizlucasi/site_webapp.git'
+        	checkout scm
     	}
     	
         stage('Build') {
