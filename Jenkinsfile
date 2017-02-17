@@ -5,15 +5,10 @@ pipeline {
 
     stages {
     	
-    	
-    	stage('Checkout repository') {
-        	checkout scm
-    	}
-    	
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+    	stage('Build') {
+            node {
+        		checkout scm
+			}
         }
         stage('Test') {
             steps {
