@@ -4,7 +4,11 @@ pipeline {
     agent any
 
     stages {
-    	  // Checkout files.
+    	
+    	
+    	stage('Checkout') {
+
+        // Checkout files.
         checkout([
             $class: 'GitSCM',
             branches: [[name: 'master']],
@@ -12,10 +16,12 @@ pipeline {
             extensions: [], submoduleCfg: [],
             userRemoteConfigs: [[
                 name: 'github',
-                url: 'https://github.com/luizlucasi/site_webapp.git'
+                url: 'https://github.com/mmorejon/time-table.git'
             ]]
         ])
-    	
+
+       
+    	}
     	
         stage('Build') {
             steps {
